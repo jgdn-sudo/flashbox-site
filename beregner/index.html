@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beregn din klubs indtjening | Flashbox</title>
+<meta property="og:image" content="https://flashbox.dk/assets/img/og.jpg">
+<meta property="og:url" content="https://flashbox.dk/beregner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Beregn et estimat for din klubs indtjening med Flashbox ud fra jeres egne tal.">
+<meta name="theme-color" content="#0a0706">
+<meta property="og:title" content="Beregn din klubs indtjening | Flashbox">
+<meta property="og:description" content="Beregn et estimat for din klubs indtjening med Flashbox ud fra jeres egne tal.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon-64.png?v=3">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=3">
+</head>
+<body class="calculator-page">
+<div class="spot" id="spot" aria-hidden="true"></div>
+<header class="nav" id="nav">
+  <a class="nav__logo" href="/" aria-label="Flashbox">
+    <span class="wordmark"><span class="wordmark__flash">FLASH</span><span class="wordmark__box">BOX</span></span>
+  </a>
+  <div class="nav__actions">
+    <a class="nav__wa" href="mailto:hej@flashbox.dk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>hej@flashbox.dk</span></a>
+    <a class="btn btn--primary" href="/">Til forsiden</a>
+  </div>
+</header>
+<main id="top" class="calculator-page__main">
+<div class="wrap calculator-page__wrap">
+<a class="calculator-page__back" href="/">← Til forsiden</a>
+<div class="calculator-page__intro"><span class="eyebrow">Beregner</span><h1 class="display">Hvad kan din klub tjene?</h1><p>Indtast jeres tal og se et estimat.</p></div>
+    <!-- BEREGNER + LEAD -->
+    <div class="calc" id="beregner">
+<div class="calc__inputs">
+        <div class="field">
+          <label for="naetter">Åbne nætter pr. uge</label>
+          <input id="naetter" type="number" min="0" max="7" step="1" inputmode="numeric" value="2" required>
+        </div>
+        <div class="field">
+          <label for="gaester">Gæster pr. nat</label>
+          <input id="gaester" type="number" min="0" max="100000" step="1" inputmode="numeric" value="600" required>
+        </div>
+      </div>
+
+
+      <noscript><p class="calc__error">Slå JavaScript til for at se beregningen, eller skriv til hej@flashbox.dk.</p></noscript>
+      <div class="calc__result" id="calcResult" aria-live="polite">
+        <p class="calc__placeholder">Dit skøn kommer her.</p>
+      </div>
+
+      <p class="calc__basis">Estimat ved 2 til 4 % brug. Dobbelt andel de første seks uger: 40 %, derefter 20 %.</p>
+      <details class="calc__explanation"><summary>Sådan regner vi</summary><p>To eller fire køb pr. 100 gæster, 52 uger om året. Gæsten betaler 39 kr. inkl. moms, og klubben får 40 % af betalingen de første seks uger og 20 % i de følgende 46 uger, før eventuel moms på klubbens afregning. Årsbeløbet gælder de første 12 måneder fra opstart. Månedstallet er et gennemsnit af det første år. Minimumsgarantien på 2.500 kr. for de første seks uger er medregnet. Er andelen lavere, lægges kun forskellen til.</p><p>Hvert køb giver to print med jeres logo. Personantallet er et skøn. Samme gæst kan tælle med flere gange.</p>
+      <div class="field calc__recipients"><label for="personer">Personer, der tager et print med pr. køb</label><input id="personer" type="number" min="1" max="2" step="0.1" value="2" required inputmode="decimal"><p class="calc__note">Hvert køb giver to print. Vi antager, at to personer tager et hver. Justér gennemsnittet, hvis I forventer noget andet.</p></div>
+      <p>Den faktiske brug kan ligge under eller over skønnet.</p></details>
+      <a class="btn btn--primary calc__email" href="mailto:hej@flashbox.dk?subject=Beregning%20til%20min%20klub">Tal med os om din klub</a>
+
+    </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__logo">
+        <span class="logo-lg"><img class="mark mark--lg" src="/assets/img/logo.png" alt="" width="56" height="56"><span class="wordmark wordmark--lg"><span class="wordmark__flash">FLASH</span><span class="wordmark__box">BOX</span></span></span>
+        <p class="footer__tagline">Photo booth til natklubber. Uden investering.</p>
+      </div>
+      <div class="footer__info">
+        Flashbox<br>
+        <a href="mailto:hej@flashbox.dk">hej@flashbox.dk</a><br>
+        Danmark
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© 2026 Flashbox</span>
+      <div class="footer__legal">
+        
+        <a href="#top">Til toppen ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="module" src="/assets/js/main.js"></script>
+<script type="module" src="/assets/js/calculator-page.js"></script>
+</body>
+</html>
