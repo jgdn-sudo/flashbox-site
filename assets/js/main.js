@@ -1,4 +1,4 @@
-import {calculateYearFromPurchases} from './calculator.js';
+import {calculateYearFromPurchases} from './calculator.js?v=20261111-net-range';
 /* =========================================================
    FLASHBOX — main.js
    ========================================================= */
