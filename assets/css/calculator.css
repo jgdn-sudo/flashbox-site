@@ -14,3 +14,11 @@
 .calc-more>details{margin-top:24px;border-top:1px solid var(--line);padding-top:20px}
 @media(max-width:850px){.calc-results{padding:26px}.calc-result-heading{margin-bottom:20px}.calc-big{font-size:clamp(2rem,6vw,3.4rem)}}
 @media(max-width:480px){.calc-results{padding:22px}.calc-big{font-size:clamp(1.65rem,7vw,2.2rem)}.calc-result-heading{align-items:flex-start}.calc-result-heading h2{font-size:1.05rem}}
+
+/* Printed strips stay visible next to the income estimate. */
+.calc-print-summary{margin-top:24px;padding-top:20px;border-top:1px solid #543522}
+.calc-print-summary .calc-secondary-value{color:#ffae63;font-variant-numeric:tabular-nums}
+.calculator-page .nav{background:rgba(10,7,6,.96)}
+.calc-error{color:var(--fog)}
+
+.calc-print-monthly{font-size:.9rem;color:#d6bda8;line-height:1.5;margin:8px 0}

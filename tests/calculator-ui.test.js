@@ -13,20 +13,22 @@ async function fixture(query=''){
  const input=(id,value)=>{byId(id).value=value;byId(id).dispatchEvent(new dom.window.Event('input',{bubbles:true}));};
  return {dom,byId,input,close:()=>dom.window.close()};
 }
-test('calculator shows annual and monthly estimates with optional detail collapsed',async()=>{const f=await fixture();try{
+test('calculator shows annual and monthly estimates with optional detail collapsed',async()=>{const f=await fixture('?gaester=600');try{
  assert.equal(f.byId('annualResult').textContent,'10.733 til 16.938 kr.');
  assert.equal(f.byId('monthlyResult').textContent,'894 til 1.411 kr. pr. måned i gennemsnit');
  assert.match(f.byId('taxLabel').textContent,/Ekskl. moms og før skat/);
  assert.equal(f.byId('method').open,false);
  for(const id of ['nightResult','logoResult','initialResult','regularResult'])assert.equal(f.byId(id).closest('details').id,'method');
  assert.equal(f.byId('calculationError').hidden,true);
+ assert.equal(f.byId('annualPrintsResult').textContent,'2.621 til 4.867');
+ assert.equal(f.byId('annualPrintsResult').closest('details'),null);
+ assert.equal(f.byId('monthlyPrintsResult').textContent,'218 til 406 pr. måned i gennemsnit');
  assert.equal(f.byId('presentationMode'),null);
 }finally{f.close()}});
-test('venue is available immediately, displays as plain text, and opening presets recalculate',async()=>{const f=await fixture();try{
- assert.equal(f.byId('venueField').hidden,false);
+test('calculator needs no venue name and opening presets recalculate',async()=>{const f=await fixture();try{
+ assert.equal(f.byId('venueField'),null);assert.equal(f.byId('venue'),null);
  assert.equal(f.byId('naetter').tagName,'SELECT');assert.equal(f.byId('naetter').value,'2');
- f.input('venue','<img src=x onerror=alert(1)>');assert.equal(f.byId('venueHeading').textContent,'<img src=x onerror=alert(1)>');assert.equal(f.byId('venueHeading').children.length,0);
- f.input('venue','');assert.equal(f.byId('venueHeading').textContent,'Jeres klub');
+ f.input('gaester','600');
  f.byId('naetter').value='3';f.byId('naetter').dispatchEvent(new f.dom.window.Event('change',{bubbles:true}));
  const expected=model.calculateRange(600,3);const fmt=n=>new Intl.NumberFormat('da-DK',{maximumFractionDigits:0}).format(n);
  assert.equal(f.byId('annualResult').textContent,fmt(expected.low.firstYearAnnual)+' til '+fmt(expected.high.firstYearAnnual)+' kr.');
@@ -38,5 +40,14 @@ test('invalid inputs hide old estimates and details; zero opening gives zero',as
 }finally{f.close()}});
 test('existing links restore numerical assumptions in the single simplified view',async()=>{const f=await fixture('?visning=praesentation&gaester=1000&naetter=3&personer=1');try{
  assert.equal(f.byId('gaester').value,'1000');assert.equal(f.byId('naetter').value,'3');assert.equal(f.byId('personer').value,'1');
- assert.equal(f.byId('venueField').hidden,false);assert.equal(f.byId('calculationResults').hidden,false);
+ assert.equal(f.byId('venueField'),null);assert.equal(f.byId('calculationResults').hidden,false);
+}finally{f.close()}});
+
+test('guest count starts empty; prints depend on purchases and clear with the input',async()=>{const f=await fixture();try{
+ assert.equal(f.byId('gaester').value,'');assert.equal(f.byId('calculationResults').hidden,true);
+ assert.equal(f.byId('annualResult').textContent,'—');assert.equal(f.byId('annualPrintsResult').textContent,'—');
+ f.input('gaester','600');assert.equal(f.byId('annualPrintsResult').textContent,'2.621 til 4.867');
+ f.input('personer','1');assert.equal(f.byId('annualPrintsResult').textContent,'2.621 til 4.867');
+ assert.equal(f.byId('logoResult').textContent,'1.310 til 2.434');
+ f.input('gaester','');assert.equal(f.byId('calculationResults').hidden,true);assert.equal(f.byId('annualPrintsResult').textContent,'—');
 }finally{f.close()}});

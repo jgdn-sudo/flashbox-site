@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/calculator.css?v=20261117-simple">
+<link rel="stylesheet" href="/assets/css/calculator.css?v=20261117-prints">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon-64.png?v=3">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=3">
@@ -40,14 +40,13 @@
 <div class="calc-layout" id="beregner">
 <form id="calculatorInputs" class="calc-controls">
 <h2>Klubbens tal</h2>
-<div class="field calc-venue-field" id="venueField"><label for="venue">Klubbens navn</label><input id="venue" type="text" maxlength="80" placeholder="Skriv klubbens navn" autocomplete="off"></div>
 <div class="field"><label for="naetter">Åbningsaftener pr. uge</label><select id="naetter" required><option value="0">0 aftener</option><option value="1">1 aften</option><option value="2" selected>2 aftener</option><option value="3">3 aftener</option><option value="4">4 aftener</option><option value="5">5 aftener</option><option value="6">6 aftener</option><option value="7">7 aftener</option></select></div>
-<div class="field"><label for="gaester">Gæster pr. åbningsaften</label><input id="gaester" type="number" min="0" max="100000" step="1" inputmode="numeric" value="600" required></div>
+<div class="field"><label for="gaester">Gæster pr. åbningsaften</label><input id="gaester" type="number" min="0" max="100000" step="1" inputmode="numeric" placeholder="Indtast antal gæster" required></div>
 </form>
 <section class="calc-results" aria-live="polite" aria-atomic="true">
 <div class="calc-result-heading"><h2 id="venueHeading">Jeres klub</h2><span class="calc-badge">ESTIMAT</span></div>
-<p id="calculationError" class="calc-error" hidden>Udfyld gyldige tal for at se beregningen.</p>
-<div id="calculationResults"><p class="calc-big-label">Til klubben det første år</p><p class="calc-big" id="annualResult">—</p><p class="calc-monthly" id="monthlyResult">—</p><p class="calc-tax" id="taxLabel">Ekskl. moms og før skat.</p></div>
+<p id="calculationError" class="calc-error" hidden>Indtast antal gæster pr. åbningsaften for at se estimatet.</p>
+<div id="calculationResults"><p class="calc-big-label">Til klubben det første år</p><p class="calc-big" id="annualResult">—</p><p class="calc-monthly" id="monthlyResult">—</p><p class="calc-tax" id="taxLabel">Ekskl. moms og før skat.</p><div class="calc-print-summary"><p class="calc-secondary-label">Fotostrips med jeres logo med hjem pr. år</p><strong class="calc-secondary-value" id="annualPrintsResult">—</strong><p class="calc-print-monthly" id="monthlyPrintsResult">—</p><p class="calc-secondary-foot">Estimat · to fotostrips pr. køb.</p></div></div>
 </section>
 </div>
 <details class="calc-more" id="method"><summary>Sådan regner vi</summary>
@@ -86,7 +85,7 @@
     </div>
   </div>
 </footer>
-<script type="module" src="/assets/js/main.js?v=20261117-simple"></script>
-<script type="module" src="/assets/js/calculator-page.js?v=20261117-simple"></script>
+<script type="module" src="/assets/js/main.js?v=20261117-prints"></script>
+<script type="module" src="/assets/js/calculator-page.js?v=20261117-prints"></script>
 </body>
 </html>

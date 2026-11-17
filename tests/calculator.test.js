@@ -30,8 +30,8 @@ test('ordinary-year homepage examples use the same after-VAT basis',()=>{
 });
 test('both old and canonical calculator URLs contain the same controls and source caveats',async()=>{
  const page=await readFile(new URL('../beregner/index.html',import.meta.url),'utf8');assert.equal(page,await readFile(new URL('../beregner.html',import.meta.url),'utf8'));
- for(const id of ['gaester','naetter','personer','venue','annualResult','initialResult','topupResult'])assert(page.includes('id="'+id+'"'));
- assert(page.includes('Casenes momsgrundlag'));assert(!page.match(/<input id="venue"[^>]*>/)[0].includes('value='));assert(!/(?<!\d)2\.500/.test(page));assert(!page.includes('app.notion.com'));
+ for(const id of ['gaester','naetter','personer','annualResult','initialResult','topupResult'])assert(page.includes('id="'+id+'"'));
+ assert(page.includes('Casenes momsgrundlag'));assert(!page.includes('id="venue"'));assert(!/(?<!\d)2\.500/.test(page));assert(!page.includes('app.notion.com'));
 });
 test('the site has working canonical calculator links and no calculator form on the homepage',async()=>{
  const page=await readFile(new URL('../index.html',import.meta.url),'utf8');assert(page.includes('href="/beregner/"'));assert(!page.includes('id="gaester"'));assert(!page.includes('24.336'));

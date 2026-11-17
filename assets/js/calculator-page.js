@@ -13,10 +13,10 @@ function read(){
 }
 function render(){
   const data=read();$('calculationError').hidden=!!data;$('calculationResults').hidden=!data;
-  $('venueHeading').textContent=$('venue').value.trim()||'Jeres klub';
   $('taxLabel').textContent='Ekskl. moms og før skat.';
   $('termsDescription').textContent=model.DISPLAY_TERMS.description;
-  if(!data){for(const id of ['initialResult','topupResult','regularResult','logoResult','logoMonthly','nightResult','annualPurchases'])$(id).textContent='—';return;}
+  $('calculationError').textContent=$('gaester').value===''?'Indtast antal gæster pr. åbningsaften for at se estimatet.':'Udfyld gyldige tal for at se beregningen.';
+  if(!data){for(const id of ['annualResult','monthlyResult','annualPrintsResult','monthlyPrintsResult','initialResult','topupResult','regularResult','logoResult','logoMonthly','nightResult','annualPurchases'])$(id).textContent='—';return;}
   const span=(field,format=number)=>{
     const low=data.low[field],high=data.high?.[field];
     if(!Number.isFinite(low))return '—';return high===undefined||Math.abs(high-low)<0.005?format(low):format(low)+' til '+format(high);
@@ -24,13 +24,15 @@ function render(){
   const cash=field=>span(field,n=>number(n))+' kr.';
   $('annualResult').textContent=cash('firstYearAnnual');
   $('monthlyResult').textContent=span('firstYearAnnual',n=>number(n/12))+' kr. pr. måned i gennemsnit';
+  $('annualPrintsResult').textContent=span('annualPrints');
+  $('monthlyPrintsResult').textContent=span('annualPrints',n=>number(n/12))+' pr. måned i gennemsnit';
   $('logoResult').textContent=span('annualLogoVisits');
   $('logoMonthly').textContent=span('annualLogoVisits',n=>number(n/12))+' pr. måned i gennemsnit. Gentagne gæster kan tælle med.';
   $('nightResult').textContent=span('purchasesPerNight',n=>number(n,1));
   $('annualPurchases').textContent=span('annualPurchases')+' køb i første år';
   $('initialResult').textContent=cash('initialTotal');$('topupResult').textContent=cash('guaranteeTopUp');$('regularResult').textContent=cash('annual');
 }
-for(const id of ['gaester','naetter','personer','venue']){
+for(const id of ['gaester','naetter','personer']){
   $(id).addEventListener('input',render);
   $(id).addEventListener('change',render);
 }
