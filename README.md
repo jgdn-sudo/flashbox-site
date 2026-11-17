@@ -24,3 +24,7 @@ References: [Fotonbox's public calculation](https://fotonbox.es/assets/js/main.j
 ## Simplified calculator, 17 November 2026
 
 One view with three visible fields: venue name, opening nights (dropdown, default 2) and guests per opening night (default 600). Only first-year income and its monthly average appear in the result card. Calculation assumptions, print estimates and attributed foreign examples are under the closed calculation details. Presentation mode, link-copy and fullscreen controls are removed. Existing numerical URL parameters still restore inputs; the old presentation URL uses the same single view. The name stays in page memory. The agreed arithmetic and commercial terms are unchanged.
+
+## Meeting presentation, 17 November 2026
+
+`/praesentation/pt-k7q3/` is a private, unlisted web version of the Pigen & Trompeten meeting deck for iPad: six slides, the embedded meeting video (plays in Safari, unlike PowerPoint for the web on iPad) and the calculator built in as slide 5, using the same model as `/beregner/`. Navigation is by arrow buttons, swipe or keyboard; a tap never changes slide. The path is not linked from the site, and robots.txt plus `noindex` keep it out of search, but anyone with the link can open it. Figures and wording mirror the PowerPoint deck; terms are owned by Notion. Speaker notes are not included.
