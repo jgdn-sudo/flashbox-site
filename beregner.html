@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/calculator.css?v=20261111-net-range">
+<link rel="stylesheet" href="/assets/css/calculator.css?v=20261117-simple">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon-64.png?v=3">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=3">
@@ -36,13 +36,29 @@
 <main id="top" class="calculator-page__main">
 <div class="wrap calculator-page__wrap">
 <a class="calculator-page__back" href="/">← Til forsiden</a>
-<div class="calculator-page__intro"><span class="eyebrow">FLASHBOX BEREGNER</span><h1 class="display">Se mulighederne med jeres tal.</h1><p>Et regneeksempel for klubben. Ingen målte salg eller løfter.</p></div>
-<div class="calc-toolbar"><div class="calc-switch" aria-label="Beregningens visning"><button id="rangeMode" type="button" aria-pressed="true">Normal visning</button><button id="presentationMode" type="button" aria-pressed="false">Præsentation</button></div><div class="calc-actions"><button id="copyCalculation" class="calc-action" type="button">Kopiér link med tallene</button><button id="fullscreen" class="calc-action" type="button">Fuldskærm</button></div></div>
-<div class="calc-layout" id="beregner"><form id="calculatorInputs" class="calc-controls"><h2>Jeres forudsætninger</h2><div class="field calc-venue-field" id="venueField" hidden><label for="venue">Klubbens navn, valgfrit</label><input id="venue" type="text" maxlength="80" placeholder="Jeres klub" autocomplete="off"></div><div class="field"><label for="naetter">Åbne aftener pr. uge</label><input id="naetter" type="number" min="0" max="7" step="1" inputmode="numeric" value="2" required></div><div class="field"><label for="gaester">Gæster pr. aften</label><input id="gaester" type="number" min="0" max="100000" step="1" inputmode="numeric" value="600" required></div><p class="calc-note" id="inputNote">Udgangspunkt: tre køb pr. 100 gæstebesøg. Spænd: 30 % under og over den beregnede andel.</p></form>
-<section class="calc-results" aria-live="polite" aria-atomic="true"><div class="calc-result-heading"><h2 id="venueHeading">Jeres klub</h2><span class="calc-badge">REGNEEKSEMPEL</span></div><p id="calculationError" class="calc-error" hidden>Udfyld gyldige tal for at se beregningen.</p><div id="calculationResults"><p class="calc-big-label">Til klubben det første år</p><p class="calc-big" id="annualResult">—</p><p class="calc-monthly" id="monthlyResult">—</p><p class="calc-tax" id="taxLabel">Beregningsgrundlaget vises nedenfor.</p><div class="calc-secondaries"><div><p class="calc-secondary-label">Estimerede printmodtagere pr. år</p><strong class="calc-secondary-value" id="logoResult">—</strong><p class="calc-secondary-foot" id="logoMonthly">—</p></div><div><p class="calc-secondary-label">Køb pr. aften i scenariet</p><strong class="calc-secondary-value" id="nightResult">—</strong><p class="calc-secondary-foot" id="annualPurchases">—</p></div></div><p class="calc-scenario-note" id="scenarioNote"></p></div></section></div>
-<p class="calc-link-status" id="linkStatus" role="status"></p>
-<details class="calc-more" id="method"><summary>Sådan regner vi</summary><p id="termsDescription"></p><div class="calc-breakdown"><div><span>Første seks uger, inkl. eventuelt garantitillæg</span><strong id="initialResult">—</strong></div><div><span>Garantitillæg, kun forskellen</span><strong id="topupResult">—</strong></div><div><span>Et efterfølgende helår ved samme brug</span><strong id="regularResult">—</strong></div></div><p>Første år er 52 uger fra opstart. Månedstallet er første års gennemsnit. Beregningen forudsætter samme gæstetal, åbning og købsrate gennem hele perioden. Uden åbningsaftener er der intet driftsscenarie eller beregnet garantikrav.</p><div class="field"><label for="personer">Antagne printmodtagere pr. køb</label><input id="personer" type="number" min="1" max="2" step="0.1" inputmode="decimal" value="2" required></div><p>Hvert køb giver to print. Antallet af modtagere er et skøn, og samme gæst kan tælle med flere gange. Det er ikke en måling af unikke personer eller bekræftede udleveringer.</p><p>Et skøn over klubbens beløb er ikke det samme som overskud. Eventuelle egne udgifter og skat er ikke trukket fra.</p></details>
-<details class="calc-more" id="clubExamples"><summary>Offentliggjorte klubeksempler fra Spanien</summary><p>To afrundede, anonymiserede cases oplyst af Fotonbox. De er eksempler fra en anden operatør og dokumenterer ikke Flashbox-resultater eller en forventet købsrate.</p><div class="calc-comparison"><table><thead><tr><th>Oplyst case</th><th>Gæster pr. aften</th><th>Aftener pr. uge</th><th>Oplyst årligt til klubben</th></tr></thead><tbody><tr><td>Technoklub</td><td>850</td><td>2 til 3</td><td>4.000 EUR<small>Ca. 30.000 kr. ved regnekurs 7,50</small></td></tr><tr><td>Stort diskotek</td><td>1.500</td><td>3</td><td>7.000 EUR<small>Ca. 52.500 kr. ved regnekurs 7,50</small></td></tr></tbody></table></div><p>Casenes momsgrundlag, klubandel og antal køb er ikke oplyst. Derfor kan beløbene ikke sammenlignes direkte med vores beregnede beløb. Kursen er en afrundet regnekurs. <a href="https://fotonbox.es/" target="_blank" rel="noopener noreferrer">Se operatørens offentliggjorte eksempler ↗</a>. Kontrolleret 11. november 2026.</p></details>
+<div class="calculator-page__intro"><span class="eyebrow">FLASHBOX BEREGNER</span><h1 class="display">Hvad kan jeres klub tjene?</h1></div>
+<div class="calc-layout" id="beregner">
+<form id="calculatorInputs" class="calc-controls">
+<h2>Klubbens tal</h2>
+<div class="field calc-venue-field" id="venueField"><label for="venue">Klubbens navn</label><input id="venue" type="text" maxlength="80" placeholder="Skriv klubbens navn" autocomplete="off"></div>
+<div class="field"><label for="naetter">Åbningsaftener pr. uge</label><select id="naetter" required><option value="0">0 aftener</option><option value="1">1 aften</option><option value="2" selected>2 aftener</option><option value="3">3 aftener</option><option value="4">4 aftener</option><option value="5">5 aftener</option><option value="6">6 aftener</option><option value="7">7 aftener</option></select></div>
+<div class="field"><label for="gaester">Gæster pr. åbningsaften</label><input id="gaester" type="number" min="0" max="100000" step="1" inputmode="numeric" value="600" required></div>
+</form>
+<section class="calc-results" aria-live="polite" aria-atomic="true">
+<div class="calc-result-heading"><h2 id="venueHeading">Jeres klub</h2><span class="calc-badge">ESTIMAT</span></div>
+<p id="calculationError" class="calc-error" hidden>Udfyld gyldige tal for at se beregningen.</p>
+<div id="calculationResults"><p class="calc-big-label">Til klubben det første år</p><p class="calc-big" id="annualResult">—</p><p class="calc-monthly" id="monthlyResult">—</p><p class="calc-tax" id="taxLabel">Ekskl. moms og før skat.</p></div>
+</section>
+</div>
+<details class="calc-more" id="method"><summary>Sådan regner vi</summary>
+<p>Månedstallet er første års gennemsnit. Estimatet forudsætter samme gæstetal og åbning i 52 uger. Det er et regneeksempel, ikke en garanti for salg. Egne eventuelle udgifter er ikke fratrukket.</p>
+<p id="termsDescription"></p>
+<div class="calc-breakdown"><div><span>Første seks uger, inkl. eventuelt garantitillæg</span><strong id="initialResult">—</strong></div><div><span>Garantitillæg, kun forskellen</span><strong id="topupResult">—</strong></div><div><span>Et efterfølgende helår ved samme brug</span><strong id="regularResult">—</strong></div></div>
+<div class="calc-secondaries"><div><p class="calc-secondary-label">Estimerede printmodtagere pr. år</p><strong class="calc-secondary-value" id="logoResult">—</strong><p class="calc-secondary-foot" id="logoMonthly">—</p></div><div><p class="calc-secondary-label">Køb pr. åbningsaften</p><strong class="calc-secondary-value" id="nightResult">—</strong><p class="calc-secondary-foot" id="annualPurchases">—</p></div></div>
+<div class="field"><label for="personer">Antagne printmodtagere pr. køb</label><input id="personer" type="number" min="1" max="2" step="0.1" inputmode="decimal" value="2" required></div>
+<p>Hvert køb giver to print. Modtagere er et skøn og kan omfatte gentagne gæster. Uden åbningsaftener beregnes ingen indtjening eller garanti.</p>
+<details id="clubExamples"><summary>Eksempler fra Spanien</summary><p>To afrundede, anonymiserede cases oplyst af Fotonbox. De dokumenterer ikke Flashbox-resultater eller en forventet købsrate.</p><div class="calc-comparison"><table><thead><tr><th>Oplyst case</th><th>Gæster pr. aften</th><th>Aftener pr. uge</th><th>Årligt til klubben</th></tr></thead><tbody><tr><td>Technoklub</td><td>850</td><td>2 til 3</td><td>4.000 EUR<small>Ca. 30.000 kr. ved regnekurs 7,50</small></td></tr><tr><td>Stort diskotek</td><td>1.500</td><td>3</td><td>7.000 EUR<small>Ca. 52.500 kr. ved regnekurs 7,50</small></td></tr></tbody></table></div><p>Casenes momsgrundlag, klubandel og antal køb er ikke oplyst. Beløbene kan derfor ikke sammenlignes direkte med vores estimat. <a href="https://fotonbox.es/" target="_blank" rel="noopener noreferrer">Kilde: Fotonbox ↗</a>. Kontrolleret 11. november 2026.</p></details>
+</details>
 <noscript><p class="calc-error">Slå JavaScript til for at se beregningen, eller kontakt hej@flashbox.dk.</p></noscript>
 <a class="btn btn--primary calc-contact" href="mailto:hej@flashbox.dk?subject=Beregning%20til%20min%20klub">Tal med os om din klub</a>
 
@@ -70,7 +86,7 @@
     </div>
   </div>
 </footer>
-<script type="module" src="/assets/js/main.js?v=20261111-net-range"></script>
-<script type="module" src="/assets/js/calculator-page.js?v=20261111-net-range"></script>
+<script type="module" src="/assets/js/main.js?v=20261117-simple"></script>
+<script type="module" src="/assets/js/calculator-page.js?v=20261117-simple"></script>
 </body>
 </html>
