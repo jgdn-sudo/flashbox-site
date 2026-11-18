@@ -68,10 +68,11 @@ function render() {
   if (raw !== '' && Number.isFinite(guests) && guests >= 0 && guests <= 100000) {
     try { r = model.calculateRange(guests, nights, 2); } catch { r = null; }
   }
-  if (!r) { $('annual').textContent = '—'; $('monthly').textContent = 'Indtast gæster pr. aften'; $('prints').textContent = '—'; return; }
+  if (!r) { $('annual').textContent = '—'; $('monthly').textContent = '—'; $('prints').textContent = '—'; $('perNight').textContent = 'Indtast gæster pr. aften'; return; }
   $('annual').textContent = range(r.low.firstYearAnnual, r.high.firstYearAnnual, nf) + ' kr.';
   $('monthly').textContent = range(r.low.firstYearAnnual / 12, r.high.firstYearAnnual / 12, nf) + ' kr. pr. måned i gennemsnit';
   $('prints').textContent = range(r.low.annualPrints, r.high.annualPrints, nf);
+  $('perNight').textContent = 'Svarer til ' + range(r.low.purchasesPerNight, r.high.purchasesPerNight, n => nf(n)) + ' køb pr. åbningsaften i gennemsnit';
 }
 for (const b of document.querySelectorAll('.stepper button')) {
   b.addEventListener('click', () => {

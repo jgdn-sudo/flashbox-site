@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="deck.css?v=2">
+<link rel="stylesheet" href="deck.css?v=3">
 </head>
 <body>
 <main class="deck" id="deck" aria-roledescription="præsentation">
@@ -53,6 +53,7 @@
   <div class="split">
     <div class="copy">
       <h2>Tre fordele</h2>
+      <div class="benefit"><h3>Gratis reklame</h3><p class="note">Jeres logo på hvert print, som gæsterne tager med hjem</p></div>
       <div class="benefit">
         <h3>Ekstra indtjening</h3>
         <div class="rates">
@@ -61,7 +62,6 @@
         </div>
         <p class="note">Af hvert køb, ekskl. moms · normalt 15 %</p>
       </div>
-      <div class="benefit"><h3>Gratis reklame</h3></div>
       <div class="benefit"><h3>Passer sig selv</h3></div>
       <p class="punch">En ekstra medarbejder, der betaler jer</p>
     </div>
@@ -78,17 +78,21 @@
         <div class="stepper" data-for="naetter"><button type="button" data-d="-1" aria-label="Færre aftener">−</button><output id="naetterOut">2</output><button type="button" data-d="1" aria-label="Flere aftener">+</button></div>
         <input type="hidden" id="naetter" value="2">
         <label for="gaester">Gæster pr. åbningsaften</label>
-        <input id="gaester" type="number" inputmode="numeric" min="0" max="100000" step="10" value="600">
+        <input id="gaester" type="number" inputmode="numeric" min="0" max="100000" step="10" value="" placeholder="Fx 600">
         <div class="chips" aria-label="Hurtigvalg">
           <button type="button" data-g="300">300</button><button type="button" data-g="450">450</button><button type="button" data-g="600">600</button><button type="button" data-g="800">800</button><button type="button" data-g="1000">1.000</button>
         </div>
       </form>
       <div class="calc-out" aria-live="polite">
-        <p class="label">Til klubben det første år</p>
-        <p class="result" id="annual">—</p>
-        <p class="monthly" id="monthly">—</p>
-        <p class="prints"><span id="prints">—</span> fotostrips med jeres logo med hjem pr. år</p>
-        <p class="fine">Estimat ekskl. moms og før skat · tre køb pr. 100 gæster ±30 % · samme drift i 52 uger · inkl. garanti de første seks uger.</p>
+        <p class="label">Fotostrips med jeres logo med hjem pr. år</p>
+        <p class="result" id="prints">—</p>
+        <p class="monthly" id="perNight">Indtast gæster pr. aften</p>
+        <div class="money">
+          <p class="label">Til klubben det første år</p>
+          <p class="result result--2" id="annual">—</p>
+          <p class="monthly" id="monthly">—</p>
+        </div>
+        <p class="fine">Estimat ekskl. moms og før skat · tre køb pr. 100 gæster ±30 % · to strips pr. køb · samme drift i 52 uger · inkl. garanti de første seks uger.</p>
       </div>
     </div>
   </div>
@@ -96,9 +100,10 @@
 
 <section class="slide" data-n="6" aria-label="Placering">
   <div class="solo">
-    <p class="big big--mid">Placeringen vælger vi sammen</p>
-    <p class="label">Målet er åbning</p>
-    <p class="big">1. december</p>
+    <p class="kicker">FLASHBOX × PIGEN &amp; TROMPETEN</p>
+    <p class="label">Placeringen vælger vi sammen</p>
+    <p class="big">Skal vi finde pladsen?</p>
+    <p class="mid mid--soft">En runde i klubben, og vi peger ud, hvor den gør mest</p>
   </div>
 </section>
 
@@ -111,6 +116,6 @@
   <button class="nav-btn nav-btn--fs" id="fs" type="button" aria-label="Fuld skærm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </nav>
 
-<script type="module" src="deck.js?v=1"></script>
+<script type="module" src="deck.js?v=2"></script>
 </body>
 </html>

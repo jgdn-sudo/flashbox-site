@@ -66,3 +66,7 @@ h2{font-size:clamp(1.7rem,3.2vw,2.8rem);font-weight:800;margin-bottom:clamp(14px
   .calc-grid{grid-template-columns:1fr}
 }
 .photo--cut img{border-radius:0;box-shadow:none;object-fit:contain}
+.money{margin-top:22px;padding-top:18px;border-top:1px solid #543522}
+.result--2{font-size:clamp(1.6rem,3.4vw,2.9rem)}
+.mid--soft{text-transform:none;font-family:Inter,sans-serif;font-weight:500;color:#e9e1d8}
+.benefit .note{margin-top:4px}
