@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Flashbox">
+<meta name="theme-color" content="#0a0706">
+<title>Flashbox</title>
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css?v=3">
+</head>
+<body>
+<main class="deck" id="deck" aria-roledescription="præsentation">
+
+<section class="slide" data-n="1" aria-label="Flashbox">
+  <div class="split">
+    <div class="copy">
+      <p class="kicker">FLASHBOX</p>
+      <h1>Fotoboks til natklubber</h1>
+      <p class="lead">Et fysisk minde fra aftenen</p>
+    </div>
+    <figure class="photo"><img src="boks.jpg" alt="Flashbox-fotoboksen" width="900" height="1200"><figcaption>Visualisering</figcaption></figure>
+  </div>
+</section>
+
+<section class="slide" data-n="2" aria-label="Garanti">
+  <div class="solo">
+    <p class="kicker">FLASHBOX</p>
+    <p class="label">De første seks uger</p>
+    <p class="big">Mindst 3.500 kr.</p>
+    <p class="small">Eksklusiv moms</p>
+    <p class="mid">Vi betaler forskellen</p>
+    <p class="pill">Stop når som helst</p>
+  </div>
+</section>
+
+<section class="slide slide--video" data-n="3" aria-label="Video">
+  <div class="video-wrap">
+    <video id="film" src="video.mp4" poster="poster.jpg" playsinline preload="auto" controlslist="nodownload noplaybackrate" disablepictureinpicture></video>
+    <button class="play" id="play" type="button" aria-label="Afspil video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+  </div>
+</section>
+
+<section class="slide" data-n="4" aria-label="Tre fordele">
+  <div class="split">
+    <div class="copy">
+      <h2>Tre fordele</h2>
+      <div class="benefit"><h3>Gratis reklame</h3><p class="note">Jeres logo på hvert billede, som gæsterne tager med hjem</p></div>
+      <div class="benefit">
+        <h3>Ekstra indtjening</h3>
+        <div class="rates">
+          <div><strong>20 %</strong><span>Derefter</span></div>
+          <div><strong>40 %</strong><span>De første seks uger</span></div>
+        </div>
+        <p class="note">Af hvert køb, ekskl. moms · normalt 15 %</p>
+      </div>
+      <div class="benefit"><h3>Passer sig selv</h3></div>
+      <p class="punch">En ekstra medarbejder, der betaler jer</p>
+    </div>
+    <figure class="photo photo--cut"><img src="prints.png" alt="Billeder med plads til klubbens logo" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="slide" data-n="5" aria-label="Jeres tal">
+  <div class="calc">
+    <h2>Jeres tal</h2>
+    <div class="calc-grid">
+      <form class="calc-in" id="calcForm" autocomplete="off">
+        <label for="naetter">Åbningsaftener pr. uge</label>
+        <div class="stepper" data-for="naetter"><button type="button" data-d="-1" aria-label="Færre aftener">−</button><output id="naetterOut">2</output><button type="button" data-d="1" aria-label="Flere aftener">+</button></div>
+        <input type="hidden" id="naetter" value="2">
+        <label for="gaester">Gæster pr. åbningsaften</label>
+        <input id="gaester" type="number" inputmode="numeric" min="0" max="100000" step="10" value="" placeholder="Fx 600">
+        <div class="chips" aria-label="Hurtigvalg">
+          <button type="button" data-g="300">300</button><button type="button" data-g="450">450</button><button type="button" data-g="600">600</button><button type="button" data-g="800">800</button><button type="button" data-g="1000">1.000</button>
+        </div>
+      </form>
+      <div class="calc-out" aria-live="polite">
+        <p class="label">Billeder med jeres logo med hjem pr. år</p>
+        <p class="result" id="prints">—</p>
+        <p class="monthly" id="perNight">Indtast gæster pr. aften</p>
+        <div class="money">
+          <p class="label">Til klubben det første år</p>
+          <p class="result result--2" id="annual">—</p>
+          <p class="monthly" id="monthly">—</p>
+        </div>
+        <p class="fine">Estimat ekskl. moms og før skat · tre køb pr. 100 gæster ±30 % · to billeder pr. køb · samme drift i 52 uger · inkl. garanti de første seks uger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-n="6" aria-label="Placering">
+  <div class="solo">
+    <p class="kicker">FLASHBOX</p>
+    <p class="label">Placeringen vælger vi sammen</p>
+    <p class="big">Skal vi finde pladsen?</p>
+    <p class="mid mid--soft">En runde i klubben, og vi peger ud, hvor den gør mest</p>
+  </div>
+</section>
+
+</main>
+
+<nav class="ui" aria-label="Navigation">
+  <button class="nav-btn" id="prev" type="button" aria-label="Forrige slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="count" id="count">1 / 6</span>
+  <button class="nav-btn" id="next" type="button" aria-label="Næste slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button class="nav-btn nav-btn--fs" id="fs" type="button" aria-label="Fuld skærm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+
+<script type="module" src="deck.js?v=2"></script>
+</body>
+</html>

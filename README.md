@@ -28,3 +28,5 @@ One view with three visible fields: venue name, opening nights (dropdown, defaul
 ## Meeting presentation, 17 November 2026
 
 `/praesentation/pt-k7q3/` is a private, unlisted web version of the Pigen & Trompeten meeting deck for iPad: six slides, the embedded meeting video (plays in Safari, unlike PowerPoint for the web on iPad) and the calculator built in as slide 5, using the same model as `/beregner/`. Navigation is by arrow buttons, swipe or keyboard; a tap never changes slide. The path is not linked from the site, and robots.txt plus `noindex` keep it out of search, but anyone with the link can open it. Figures and wording mirror the PowerPoint deck; terms are owned by Notion. Speaker notes are not included.
+
+`/praesentation/std-r8n2/` is the default, venue-neutral version of the same meeting presentation: FLASHBOX branding only, the default video (no venue logos; the final close-up shows strips with a "JERES LOGO" placeholder) and identical terms and calculator. Same visibility as above: unlisted and noindex, but open to anyone with the link.
