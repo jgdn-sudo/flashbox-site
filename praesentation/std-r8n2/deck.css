@@ -70,3 +70,6 @@ h2{font-size:clamp(1.7rem,3.2vw,2.8rem);font-weight:800;margin-bottom:clamp(14px
 .result--2{font-size:clamp(1.6rem,3.4vw,2.9rem)}
 .mid--soft{text-transform:none;font-family:Inter,sans-serif;font-weight:500;color:#e9e1d8}
 .benefit .note{margin-top:4px}
+
+.rates>div:first-child strong{font-size:clamp(2.4rem,4.6vw,4rem);color:var(--orange)}
+.rates .rate-minor strong{font-size:clamp(1.3rem,2.4vw,2rem)}

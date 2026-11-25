@@ -34,3 +34,7 @@ One view with three visible fields: venue name, opening nights (dropdown, defaul
 ## Slide 4, 21 November 2026 (GO v44.320)
 
 Both meeting presentations follow the Danish script's slide 4 order: Tiltrækker folk (Udefra · Indefra; GO v44.321) → Passer sig selv → Ekstra indtjening (20 % i stedet for 15 %, 40 % i prøveperioden), ending with "En promoter, der betaler jer". Terms are unchanged and owned by Notion.
+
+## Slide 4 og 5, 25 November 2026 (GO v44.339)
+
+"Tiltrækker folk" shows Udefra and Indefra on two lines. 20 % is the large orange rate; 40 % in the trial is smaller. The calculator's fine print names the conversion as "erfaringstal fra Europa". CSS cache bumped to v=4.
